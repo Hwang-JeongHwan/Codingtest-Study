@@ -19,6 +19,7 @@ public class S4_1620_나는야_포켓몬마스터_이다솜 {
         int m = Integer.parseInt(st.nextToken());
         String name = "";
         HashMap<String, String> data = new HashMap<>();
+
         for(int i = 1; i < n + 1; i ++){ // Bulbasaur => 1 이니까
             name = br.readLine();
             data.put(name, Integer.toString(i));
@@ -28,6 +29,7 @@ public class S4_1620_나는야_포켓몬마스터_이다솜 {
 
 
         }
+//        System.out.println(data);
         for(int i = 0; i < m; i ++){
             sb.append(data.get(br.readLine()) + '\n');
             //sb.append(data.get(br.readLine()) + "\n"); 위아래 둘다됨
@@ -35,6 +37,7 @@ public class S4_1620_나는야_포켓몬마스터_이다솜 {
 
 
         }
+        br.close();
         System.out.println(sb);
     }
 }
