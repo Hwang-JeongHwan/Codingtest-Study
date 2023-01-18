@@ -32,12 +32,12 @@ public class S2_2075_N번쨰_큰_수 {
 //        Collections.sort(data,Collections.reverseOrder());
 //        System.out.println(data.get(n - 1));
 //
-        int[] array = new int[n * n];
-        int index =0;
+        int[] array = new int[n * n]; // 배열로도 구현
+        int index = 0;
 
-        for(int i=0; i<n; i++) {
+        for(int i = 0; i <n ; i++) {
             st = new StringTokenizer(br.readLine());
-            for(int j=0; j<n; j++) {
+            for(int j = 0; j < n; j++) {
                 array[index++] = Integer.parseInt(st.nextToken());
             }
         }
