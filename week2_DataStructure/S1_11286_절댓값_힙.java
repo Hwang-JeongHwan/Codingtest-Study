@@ -31,7 +31,7 @@ public class S1_11286_절댓값_힙 {
                 return -1;
             }
 
-//            return  o1 - o2; // Comparatordml compare 메소드는
+//            return  o1 - o2; // Comparator은 compare 메소드는
             // 음수일 경우 두원소의 위치를 교환 안함, 양수일 경우 두 원소의 위치를 교환함
             // 내림차순으로 정렬하고 싶다면 반환값에 음수를 붙이던가 o2 - o1으로 return
 
