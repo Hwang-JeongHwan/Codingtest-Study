@@ -1,4 +1,4 @@
-package week2;
+package week2_DataStructure;
 import java.util.*;
 import java.io.*;
 public class S4_1620_나는야_포켓몬마스터_이다솜 {

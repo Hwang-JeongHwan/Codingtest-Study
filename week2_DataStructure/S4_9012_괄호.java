@@ -1,4 +1,4 @@
-package week2;
+package week2_DataStructure;
 // ')' 면 + '(' 면 -
 // stack에 넣고 스택이 빌때까지 pop반복
 // -가 되는 순간 break => false반환

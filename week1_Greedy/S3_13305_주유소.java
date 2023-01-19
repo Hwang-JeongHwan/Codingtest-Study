@@ -1,4 +1,4 @@
-package week1;
+package week1_Greedy;
 import java.util.*;
 import java.io.*;
 public class S3_13305_주유소 {

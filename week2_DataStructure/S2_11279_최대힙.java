@@ -1,4 +1,4 @@
-package week2;
+package week2_DataStructure;
 import java.io.*;
 import java.util.*;
 public class S2_11279_최대힙 {

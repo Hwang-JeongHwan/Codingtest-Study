@@ -1,4 +1,4 @@
-package week2;
+package week2_DataStructure;
 
 import java.util.*;
 import java.io.*;

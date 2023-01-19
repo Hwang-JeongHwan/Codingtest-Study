@@ -1,4 +1,4 @@
-package week1;
+package week1_Greedy;
 // 조마다 티셔츠를 맞추는 비용 = 조에서 가장 큰 원생 키 - 가장 작은 원생 키
 // 최소 비용합
 import java.util.*;

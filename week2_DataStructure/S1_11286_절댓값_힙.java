@@ -1,4 +1,4 @@
-package week2;
+package week2_DataStructure;
 import java.util.*;
 import java.io.*;
 public class S1_11286_절댓값_힙 {

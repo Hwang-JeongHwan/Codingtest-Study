@@ -1,4 +1,4 @@
-package week1;
+package week1_Greedy;
 import java.io.*;
 import java.util.*;;
 public class S4_11399_ATM {

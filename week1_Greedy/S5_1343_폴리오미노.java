@@ -1,5 +1,4 @@
-package week1;
-import java.util.*;
+package week1_Greedy;
 import java.io.*;
 public class S5_1343_폴리오미노 {
     public static void main(String[] args)throws IOException {
