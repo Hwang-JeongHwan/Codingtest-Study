@@ -19,6 +19,7 @@ public class S4_2217로프 {
 
         }
         Arrays.sort(data);
+
         int result = 0;
         for (int i = 0; i < n ; i ++){
             result = Math.max(result, data[i] * (n - i));
