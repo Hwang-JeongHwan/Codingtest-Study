@@ -1,7 +1,7 @@
 package book_study;
 import java.util.*;
 import java.io.*;
-public class G5_1068_트리 {
+public class G5_1068_리프노드의_개수_구하기 {
     static int parent[];
     static boolean visited[];
     static ArrayList<Integer>[] arr;
