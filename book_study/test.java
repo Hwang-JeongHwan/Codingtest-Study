@@ -3,6 +3,8 @@ package book_study;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.function.Consumer;
 
 public class test {
@@ -19,13 +21,19 @@ public class test {
 //        for(int i = 2; i >= 0; i--){
 //            System.out.println(i);
 //        }
-        try{
-            int arr[] = new int[3];
-            arr[3] = 30;
-            System.out.println("OK");
-        }
-        catch(NullPointerException e){
-            e.printStackTrace();
-        }
+//        try{
+//            int arr[] = new int[3];
+//            arr[3] = 30;
+//            System.out.println("OK");
+//        }
+//        catch(NullPointerException e){
+//            e.printStackTrace();
+//        }
+        Deque<Integer> deque = new LinkedList<>();
+        deque.add(1);
+        deque.addLast(2);
+        deque.add(3);
+        System.out.println(deque.pollFirst());
+        System.out.println(deque.pollFirst());
     }
 }
