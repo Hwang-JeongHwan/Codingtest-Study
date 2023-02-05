@@ -1,36 +1,28 @@
 package week4_DynamicProgramming;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
-public class S2_11053_가장긴증가하는_부분수열 {
+import java.util.*;
+import java.io.*;
+public class S2_11055_가장큰_증가부분수열 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        int[] dp = new int[n];
-        int[] arr = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine());
+        int[] arr = new int[n];
+        int[] dp = new int[n];
         for(int i = 0; i < n; i++){
             arr[i] = Integer.parseInt(st.nextToken());
+            dp[i] = arr[i];
         }
-        Arrays.fill(dp, 1);
+        int max = dp[0];
         for(int i = 1; i < n; i++){
             for(int j = 0; j < i; j++){
                 if(arr[i] > arr[j]){
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
-                    //10 20 1 2 5 30 40
-                    //1  2  1 2 3 4  5
+                    dp[i] = Math.max(dp[i], arr[i] + dp[j]);
+//                    System.out.println(Arrays.toString(dp));
+                    max = Math.max(dp[i], max);
                 }
             }
         }
-        int max = 0;
-        for(int i = 0; i < n; i++){
-            if(max < dp[i]){
-                max = dp[i];
-            }
-        }
+//        System.out.println(Arrays.toString(dp));
         System.out.println(max);
     }
 }

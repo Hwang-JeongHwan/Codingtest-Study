@@ -1,4 +1,4 @@
-package book_study;
+package week4_DynamicProgramming;
 
 import java.math.BigInteger;
 import java.util.Scanner;
