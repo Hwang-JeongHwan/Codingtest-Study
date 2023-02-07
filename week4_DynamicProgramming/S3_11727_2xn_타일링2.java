@@ -1,4 +1,4 @@
-package book_study;
+package week4_DynamicProgramming;
 
 import java.util.Scanner;
 public class S3_11727_2xn_타일링2 {
