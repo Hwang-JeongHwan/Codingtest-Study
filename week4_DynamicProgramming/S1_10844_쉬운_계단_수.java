@@ -1,6 +1,4 @@
-package week3_Tree;
-
-import java.lang.reflect.Array;
+package week4_DynamicProgramming;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -21,14 +19,15 @@ public class S1_10844_쉬운_계단_수 {
             dp[i][9] = dp[i - 1][8] % mod;
             // 끝자리가 0 과 9 인 수는 앞자리에 1, 8이 와야함
             for(int j = 1; j < 9; j++){
-                dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j + 1] % mod;
+                dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j + 1] )% mod;
             }
         }
         long result = 0;
         for(int i = 0; i < 10; i++){
-            result += dp[n][i] % mod;
+            result = (result + dp[n][i]) % mod;
         }
         System.out.println(result);
 //        System.out.println(Arrays.deepToString(dp));
     }
 }
+

@@ -29,11 +29,29 @@ public class test {
 //        catch(NullPointerException e){
 //            e.printStackTrace();
 //        }
-        Deque<Integer> deque = new LinkedList<>();
-        deque.add(1);
-        deque.addLast(2);
-        deque.add(3);
-        System.out.println(deque.pollFirst());
-        System.out.println(deque.pollFirst());
+//        Deque<Integer> deque = new LinkedList<>();
+//        deque.add(1);
+//        deque.addLast(2);
+//        deque.add(3);
+//        System.out.println(deque.pollFirst());
+//        System.out.println(deque.pollFirst());
+
+//        char c = 'A';
+//        System.out.println((char)(c + 1));
+//        Integer i = new Integer(10);
+//        int i2 = i;
+//        System.out.println(i);
+//        System.out.println(i2);
+//        int i3 = 50;
+//        Integer i4 = Integer.valueOf(i3);
+//        System.out.println(i4);
+
+        ArrayList originArr = new ArrayList();
+        originArr.add("abc");
+        originArr.add(1);
+
+        String str = (String)originArr.get(0);
+        int i = (int)originArr.get(1);
+        System.out.println(str + " " + i);
     }
 }
