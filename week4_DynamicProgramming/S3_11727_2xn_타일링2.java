@@ -1,6 +1,6 @@
 package week4_DynamicProgramming;
 
-import java.util.Scanner;
+import java.util.*;
 public class S3_11727_2xn_타일링2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -18,6 +18,12 @@ public class S3_11727_2xn_타일링2 {
 //            }
             dp[i] = (dp[i - 1] + dp[i - 2] * 2) % 10007; //
         }
+
         System.out.println(dp[n]);
+
+
     }
 }
+
+//[0, 1, 3, 5, 11, 21, 43, 85, 171, 341, 683, 1365, 2731, 5461, 10923, 21845, 0]
+//21845

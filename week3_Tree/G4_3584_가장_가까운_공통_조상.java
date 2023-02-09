@@ -31,7 +31,6 @@ public class G4_3584_가장_가까운_공통_조상 {
 
                 tree[s].add(e);
                 tree[e].add(s);
-
                 parent[e] = s;
             }
             int root = 0;

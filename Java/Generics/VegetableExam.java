@@ -1,4 +1,4 @@
-package book_study;
+package Java.Generics;
 import java.util.*;
 interface Eatable{}
 class Juice{

@@ -1,11 +1,11 @@
-package book_study;
+package Java.Generics;
 
 class Suv extends Car {
     Suv(){
 //        super("페라리", 100, 100);
     }
 }
-class CarBox<T extends Car> extends Box<T>{ }
+class CarBox<T extends Car> extends Box<T> { }
 interface Ride{}
 
 class Car implements Ride {
