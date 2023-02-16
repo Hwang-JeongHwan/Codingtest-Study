@@ -1,5 +1,6 @@
 package week5_DynamicProgramming2;
 import java.io.*;
+import java.sql.Connection;
 import java.util.*;
 public class S1_15724_주지수 {
     public static void main(String[] args) throws IOException{
