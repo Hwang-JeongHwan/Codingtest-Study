@@ -2,37 +2,56 @@ package week6;
 import java.io.*;
 import java.util.*;
 public class G5_9251_LCS {
+    private static int[][] dp;
+    private static char[] a;
+    private static char[] b;
+    private static ArrayList<Character> path;
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        a = br.readLine().toCharArray();
+        b = br.readLine().toCharArray();
+        path = new ArrayList<>();
+        dp = new int[a.length + 1][b.length + 1];
 
-        char[] str1 = br.readLine().toCharArray();
-        char[] str2 = br.readLine().toCharArray();
-
-        int length_1 = str1.length;
-        int length_2 = str2.length;
-
-        // 공집합 표현을 위해 인덱스가 한 줄씩 추가 됨
-        int[][] dp = new int[length_1 + 1][length_2 + 1];
-
-        // 1부터 시작 (index 0 은 공집합이므로 0의 값을 갖고있음)
-        for(int i = 1; i <= length_1; i++) {
-            for(int j = 1; j <= length_2; j++) {
-
-                // (i-1)과 (j-1) 번째 문자가 서로 같다면
-                if(str1[i - 1] == str2[j - 1]) {
-                    // 대각선 위 (i-1, j-1)의 dp에 +1 한 값으로 갱신
-                    dp[i][j] = dp[i - 1][j - 1] + 1;
+        for(int i = 1; i < a.length + 1; i++){
+            for(int j = 1; j < b.length + 1; j++){
+                if(a[i - 1] == b[j - 1]){
+                    dp[i][j] = dp[i - 1][j - 1] + 1; // 같으면 왼쪽위
                 }
-
-                // 같지 않다면 이전 열(i-1)과 이전 행(j-1)의 값 중 큰 것으로 갱신
-                else {
+                else{
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                    // 다르면 max(왼쪽, 위)
                 }
             }
         }
-        System.out.println(dp[length_1][length_2]);
+        System.out.println(dp[a.length][b.length]);
+//        getText(a.length, b.length);
+////        System.out.println(path);
+//        for(int i = path.size() - 1; i >= 0; i--){
+//            System.out.print(path.get(i));
+//        }
+//        System.out.println();
 
+
+    }
+    public static void getText(int x, int y){
+        if(x == 0 || y == 0){
+            return;
+        }
+        if(a[x - 1] == b[y - 1]){ // 같으면  add
+            path.add(a[x - 1]);
+            getText(x - 1, y - 1); // 왼쪽 위로 이동
+
+        }
+        else{
+            // 다르면 큰쪽으로 이동
+            if(dp[x - 1][y] > dp[x][y - 1]){
+                getText(x - 1, y);
+            }
+            else{
+                getText(x, y - 1);
+            }
+        }
     }
 
 }
