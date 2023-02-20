@@ -46,8 +46,10 @@ public class G5_14567_선수과목 {
             }
         }
         while(!queue.isEmpty()){
+//            System.out.println("s " + queue.size());
 //            System.out.print(queue.peek() + " ");
             Node nowNode = queue.poll();
+
             result.add(nowNode);
             now = nowNode.number;
             cnt = nowNode.count;
