@@ -28,8 +28,8 @@ public class G5_17485_진우의_달_여행 {
 //        System.out.println(Arrays.deepToString(arr));
         for(int i = 1; i <= m; i++){
             // dp테이블 초기화
-            dp[0][1][i] = arr[1][i]; // 오른쪽 대각선에서 오는 경우
-            dp[1][1][i] = arr[1][i]; // 아래로 가는경우
+            dp[0][1][i] = arr[1][i]; // 아래로 가는경우
+            dp[1][1][i] = arr[1][i]; // 오른쪽 대각선에서 오는 경우
             dp[2][1][i] = arr[1][i]; // 왼쪽 대각선에서 오는 경우
         }
 

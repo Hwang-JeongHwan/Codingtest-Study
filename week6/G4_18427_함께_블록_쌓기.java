@@ -2,7 +2,7 @@ package week6;
 
 import java.io.*;
 import java.util.*;
-
+//https://www.acmicpc.net/problem/18427
 public class G4_18427_함께_블록_쌓기 {
     static int[][] dp;
     static ArrayList<Integer>[] list;
