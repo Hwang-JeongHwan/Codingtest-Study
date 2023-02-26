@@ -1,5 +1,4 @@
-package week6;
-import java.util.*;
+package week6_DynamicProgramming3;
 import java.io.*;
 public class G4_1915_가장_큰_정사각형 {
     static int[][] dp;

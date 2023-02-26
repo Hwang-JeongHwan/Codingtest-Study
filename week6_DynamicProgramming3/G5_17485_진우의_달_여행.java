@@ -1,4 +1,4 @@
-package week6;
+package week6_DynamicProgramming3;
 import java.util.*;
 import java.io.*;
 public class G5_17485_진우의_달_여행 {

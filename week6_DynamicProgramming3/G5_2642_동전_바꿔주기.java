@@ -1,4 +1,4 @@
-package week6;
+package week6_DynamicProgramming3;
 import java.util.*;
 import java.io.*;
 public class G5_2642_동전_바꿔주기 {

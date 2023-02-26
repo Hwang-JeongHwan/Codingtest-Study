@@ -1,4 +1,4 @@
-package week6;
+package week6_DynamicProgramming3;
 import java.io.*;
 import java.util.*;
 
