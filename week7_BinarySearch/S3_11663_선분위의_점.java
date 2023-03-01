@@ -1,79 +1,70 @@
 package week7_BinarySearch;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+
+import java.util.*;
+import java.io.*;
 
 public class S3_11663_선분위의_점 {
-
+    static int dot[];
     static int n;
-    static int m;
-    static long[] dot;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = br.readLine();
-        StringTokenizer st = new StringTokenizer(s, " ");
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
-        dot = new long[n];
-        s = br.readLine();
-        st = new StringTokenizer(s, " ");
-
-        for (int i = 0; i < n; i++) {
-            dot[i] = Long.parseLong(st.nextToken());
-        }
-
-        Arrays.sort(dot);
-
         StringBuilder sb = new StringBuilder();
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        for (int i = 0; i < m; i++) {
-            s = br.readLine();
-            st = new StringTokenizer(s, " ");
-            int result = binarySearch(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
-            sb.append(result).append('\n');
+        n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        dot = new int[n];
+
+        st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < n; i ++){
+            dot[i] = Integer.parseInt(st.nextToken());
         }
+        Arrays.sort(dot);
+//        System.out.println(Arrays.toString(dot));
 
-        System.out.println(sb.toString().trim());
+        for(int i = 0; i < m; i ++){
+            st = new StringTokenizer(br.readLine());
+            sb.append(binarySearch(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())) + "\n");
+
+        }
+        System.out.print(sb);
+    }
+    static int binarySearch(int left, int right){
+        //right 보다 작거나 같은 인덱스 - left보다 크거나 같은 인덱스 + 1 = count
+        int start = 0, mid = 0, end = n - 1;
+        int startIndex = 0, endIndex = 0;
+        while(start <= end){
+            mid = (start + end) / 2;
+
+            if(dot[mid] <= right){
+                start = mid + 1;
+            }
+            else{ // dot[mid] <= right
+                end = mid - 1;
+            }
+
+        }
+        endIndex = end;
+        start = 0;
+
+        end = n - 1;
+
+        while(start <= end){
+            mid = (start + end) / 2;
+
+            if(dot[mid] < left){
+                start = mid + 1;
+            }
+            else{ // dot[mid] <= right
+                end = mid - 1;
+            }
+
+        }
+        startIndex = start;
+
+//        System.out.println(endIndex + " " +  startIndex + " : " +  (endIndex - startIndex));
+        return endIndex - startIndex + 1;
 
     }
-
-    static int binarySearch(int x, int y) {
-        int left = 0;
-        int right = dot.length - 1;
-
-        while (left <= right) {
-            int mid = (left + right) / 2;
-
-            if (dot[mid] > y) {
-                right = mid - 1;
-            }
-            else {
-                left = mid + 1;
-            }
-        }
-        int endIndex = right + 1;
-
-        left = 0;
-        right = dot.length - 1;
-
-        while (left <= right) {
-            int mid = (left + right) / 2;
-
-            if (dot[mid] < x) {
-                left = mid + 1;
-            }
-            else {
-                right = mid - 1;
-            }
-        }
-        int startIndex = left;
-
-//        System.out.println("페어 : " + startIndex + " " + endIndex);
-
-        return endIndex - startIndex;
-    }
-
 }
