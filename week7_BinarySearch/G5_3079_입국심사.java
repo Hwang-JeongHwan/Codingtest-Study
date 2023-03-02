@@ -3,7 +3,7 @@ package week7_BinarySearch;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class G5_3079_입국심사 {
     static long arr[];
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,7 +31,6 @@ public class Main {
             }
             if(total >= m){
                 end = mid - 1;
-
             }
             else{
                 start = mid + 1;

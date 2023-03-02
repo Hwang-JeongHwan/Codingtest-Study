@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 
 public class S1_22871_징검다리_건너기_large {
-    static int n,k=0;
+    static int n, k = 0;
     static long[] arr, dp;
     public static void main(String args[]) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
