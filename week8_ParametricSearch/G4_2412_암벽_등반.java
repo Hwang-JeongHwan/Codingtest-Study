@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class $$$G4_2412_암벽_등반$$$ {
+public class G4_2412_암벽_등반 {
     static FastReader scan = new FastReader();
     static int n, T;
     static Point[] arr;
