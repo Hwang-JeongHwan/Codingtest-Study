@@ -35,6 +35,7 @@ public class G4_1477_휴게소_세우기 {
         // distance일때 몇개의 휴게소를 지을 수 있는지 확인
         int total = 0;
         for(int i = 1; i <= n + 1; i++){
+            // 같은곳에 두면 안됨 그래서 -1을 해줌
             total += (arr[i] - arr[i - 1] - 1) / distance;
         }
         return total > m;
