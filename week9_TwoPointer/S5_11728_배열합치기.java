@@ -1,89 +1,74 @@
 package week9_TwoPointer;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class S5_11728_배열합치기 {
-    static StringBuilder sb = new StringBuilder();
-    static FastReader scan = new FastReader();
+   static FastReader scan = new FastReader();
+   static StringBuilder sb = new StringBuilder();
+   static int[] A, B, C;
+   static int n, m;
+   static void input(){
+      n = scan.nextInt();
+      m = scan.nextInt();
+      A = new int[n];
+      B = new int[m];
+      C = new int[n + m];
+      for(int i = 0; i < n; i++){
+         A[i] = scan.nextInt();
+      }
 
-    static int n, m;
-    static int[] a, b;
 
-    static void input() {
-        n = scan.nextInt();
-        m = scan.nextInt();
-        a = new int[n + 1];
-        b = new int[m + 1];
-        for (int i = 1; i <= n; i++) {
-            a[i] = scan.nextInt();
-        }
-        for (int i = 1; i <= m; i++) {
-            b[i] = scan.nextInt();
-        }
-    }
+      for(int i = 0; i < m; i++){
+         B[i] = scan.nextInt();
+      }
+   }
+   static void solution(){
+      int indexA = 0, indexB = 0;
+      while(indexA < n && indexB < m){
+         // 작은것을 sb에 append
+         if(A[indexA] < B[indexB]){
+            sb.append(A[indexA++] + " ");
+         }
+         else{
+            sb.append(B[indexB++] + " ");
+         }
+      }
+      // 위의 반복문이 끝나고 둘중 한 배열을 다 탐색했고 나머지 한 배열에 아직 탐색하지 못한부분들이 있을수 있으므로
+      while(indexA < n){
+         sb.append(A[indexA++] + " ");
+      }
+      while(indexB < m){
+         sb.append(B[indexB++] + " ");
+      }
+      System.out.println(sb);
+   }
 
-    static void pro() {
-        int L = 1, R = 1;
-        // a와 b를 앞에서부터 하나씩 추출해서 출력한다. 단, 둘 다 비어있지 않은 경우와 그것이 아닌 경우를 잘 나누자.
-        while (L <= n && R <= m){
-            if (a[L] <= b[R]) sb.append(a[L++]).append(' ');
-            else sb.append(b[R++]).append(' ');
-        }
-        while (L <= n) sb.append(a[L++]).append(' ');
-        while (R <= m) sb.append(b[R++]).append(' ');
-
-        System.out.println(sb);
-    }
-
-    public static void main(String[] args) {
-        input();
-        pro();
-    }
-
-    static class FastReader {
-        BufferedReader br;
-        StringTokenizer st;
-
-        public FastReader() {
-            br = new BufferedReader(new InputStreamReader(System.in));
-        }
-
-        public FastReader(String s) throws FileNotFoundException {
-            br = new BufferedReader(new FileReader(new File(s)));
-        }
-
-        String next() {
-            while (st == null || !st.hasMoreElements()) {
-                try {
-                    st = new StringTokenizer(br.readLine());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            return st.nextToken();
-        }
-
-        int nextInt() {
-            return Integer.parseInt(next());
-        }
-
-        long nextLong() {
-            return Long.parseLong(next());
-        }
-
-        double nextDouble() {
-            return Double.parseDouble(next());
-        }
-
-        String nextLine() {
-            String str = "";
-            try {
-                str = br.readLine();
-            } catch (IOException e) {
+   public static void main(String[] args) {
+      input();
+      solution();
+   }
+   static class FastReader{
+       BufferedReader br;
+       StringTokenizer st;
+       public FastReader(){
+          br = new BufferedReader(new InputStreamReader(System.in));
+       }
+       String next(){
+          while(st == null || !st.hasMoreElements()){
+             try {
+                st = new StringTokenizer(br.readLine());
+             }
+             catch(IOException e){
                 e.printStackTrace();
-            }
-            return str;
-        }
-    }
+             }
+          }
+          return st.nextToken();
+       }
+       int nextInt(){
+          return Integer.parseInt(next());
+       }
+
+   }
 }

@@ -104,9 +104,9 @@ public class G3_1939_중량제한 {
                 right = mid - 1;
             }
         }
-        // 같을때 left값을 조정하므로 right값 출력
-
-        System.out.println(right);
+        // 같을때 left값을 조정하므로 right값 출력해도되고 result에 mid를저장해서 출력해도됨
+        System.out.println(result);
+//        System.out.println(right);
     }
     public static void main(String[] args) {
         input();
