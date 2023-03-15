@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 public class S2_DNA_비밀번호_SlidingWindow {
     static FastReader scan = new FastReader();
-    static int S, P, checkSecret;
+    static int S, P, count;
     static String str;
     static int[] checkArr;
     static int[] myArr;
@@ -18,64 +18,64 @@ public class S2_DNA_비밀번호_SlidingWindow {
         for(int i = 0; i < 4; i++){
             checkArr[i] = scan.nextInt();
             if(checkArr[i] == 0){
-                checkSecret++;
+                count++;
             }
         }
     }
-    private static void add(char c){
+    private static void addCount(char c){
         switch(c){
             case 'A':
                 myArr[0]++;
                 if(myArr[0] == checkArr[0]){
-                    checkSecret++;
+                    count++;
                 }
                 break;
             case 'C':
                 myArr[1]++;
                 if(myArr[1] == checkArr[1]){
-                    checkSecret++;
+                    count++;
                 }
                 break;
             case 'G':
                 myArr[2]++;
                 if(myArr[2] == checkArr[2]){
-                    checkSecret++;
+                    count++;
                 }
                 break;
             case 'T':
                 myArr[3]++;
                 if(myArr[3] == checkArr[3]){
-                    checkSecret++;
+                    count++;
                 }
                 break;
 
         }
     }
-    static void erase(char c){
+    static void eraseCount(char c){
         switch(c){
             case 'A':
                 if(myArr[0] == checkArr[0]){
-                    checkSecret--;
+                    count--;
                 }
                 myArr[0]--;
 
                 break;
             case 'C':
                 if(myArr[1] == checkArr[1]){
-                    checkSecret--;
+                    count--;
                 }
                 myArr[1]--;
                 break;
             case 'G':
                 if(myArr[2] == checkArr[2]){
-                    checkSecret--;
+                    count--;
                 }
                 myArr[2]--;
 
                 break;
             case 'T':
                 if(myArr[3] == checkArr[3]){
-                    checkSecret--;
+                    count--;
                 }
                 myArr[3]--;
 
@@ -87,17 +87,17 @@ public class S2_DNA_비밀번호_SlidingWindow {
     static void solution(){
         int result = 0, left = 0;
         for(int i = 0; i < P; i++){ // 부분 문자열 처음 받을때 셋팅
-            add(arr[i]);
+            addCount(arr[i]);
         }
-        if(checkSecret == 4){
+        if(count == 4){
             result++;
         }
         // 슬라이딩 윈도우, 처음 P - 1 만큼 반복한 후 P부터 시작
         for(int right = P; right < S; right++){
             left = right - P;
-            add(arr[right]);
-            erase(arr[left]);
-            if(checkSecret == 4){
+            addCount(arr[right]);
+            eraseCount(arr[left]);
+            if(count == 4){
                 result++;
             }
         }
