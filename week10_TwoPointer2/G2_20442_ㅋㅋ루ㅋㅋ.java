@@ -2,51 +2,50 @@ package week10_TwoPointer2;
 
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class G2_20442_ㅋㅋ루ㅋㅋ {
+    static FastReader scan = new FastReader();
+    static ArrayList<Integer> lk, rk;
+    static void input(){
+        String str = scan.next();
+        int kCnt = 0;
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == 'K') kCnt++;
+            else if(str.charAt(i) == 'R') lk.add(kCnt);
+        }
+        kCnt = 0;
+        for(int i = str.length(); i >= 0; i--) kCnt++;
 
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String zzfnzz = 'K' + br.readLine() + 'K';
-        int lk = -1;
-        int rk = -1;
-        int rsum = 0;
-        char target = 'K';
-        int cnt = 0;
-        ArrayList<Integer> arr = new ArrayList<Integer>();
-        for (int i = 0; i < zzfnzz.length(); i++) {
-            if (zzfnzz.charAt(i) == target)
-                cnt++;
-            if (zzfnzz.charAt(i) != target) {
-                arr.add(cnt);
-                if (target == 'R')rsum += cnt;
-                target = target == 'K' ? 'R' : 'K';
-                cnt = 1;
-            }
-        }
-        arr.add(cnt);
-        int left = 0;
-        int right = arr.size() - 1;
-        lk += arr.get(left);
-        rk += arr.get(right);
-        int max = 0;
-        while (rsum > 0) {
-            int sum = Math.min(lk, rk)*2+rsum;
-            max = Math.max(sum, max);
-            int olk = lk;
-            if(olk<=rk) {
-                rsum -= arr.get(++left);
-                lk += arr.get(++left);
-            }
-            if(olk>=rk) {
-                rsum -= arr.get(--right);
-                rk += arr.get(--right);
-            }
-        }
-        System.out.println(max);
     }
 
+    public static void main(String[] args) throws Exception {
+
+    }
+    static class FastReader{
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader(){
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+        String next(){
+            while(st == null || !st.hasMoreElements()){
+                try {
+                    st = new StringTokenizer(br.readLine());
+                }
+                catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+        int nextInt(){
+            return Integer.parseInt(next());
+        }
+    }
 
 }
