@@ -99,14 +99,3 @@ public class G2_7453_합이_0인_네_정수 {
         }
     }
 }
-
-/*
-
-db.containerBox.insertMany([
-{name: 'bear', weight: '60', category: 'animal'},
-{name: 'bear', weight: '10', category: 'animal'},
-{name: 'cat', weight: '2', category: 'animal'},
-{name: 'phone', weight: '1', category: 'electronic'}
-])
-
- */
